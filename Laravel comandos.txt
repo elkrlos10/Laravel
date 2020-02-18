@@ -1,0 +1,32 @@
+composer create-project --prefer-dist laravel/laravel prueba2
+
+login
+composer require laravel/ui --dev
+php artisan ui vue --auth
+
+npm install
+npm run dev
+
+crear controlador
+php artisan make:controller ProductoController --resource
+
+modelo y migration
+php artisan make:model Producto -m
+
+ejecutar migration
+php artisan migrate
+
+modelo
+protected $fillable
+=[
+     'id',
+     'fir_firma',
+  
+];
+
+php artisan 	tinker
+//crear datos
+factory(App\User::class)->times(10)->create();
+
+//Inciar app desde el login
+Route::get('/', 'Auth\LoginController@showLoginForm')->name('login');
